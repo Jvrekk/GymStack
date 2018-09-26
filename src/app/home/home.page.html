@@ -1,10 +1,30 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar [color]="'primary'">
     <ion-title>Home</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content padding>
-  The world is your oyster.
-  <p>If you get lost, the <a target="_blank" rel="noopener" href="https://ionicframework.com/docs">docs</a> will be your guide.</p>
+  <ion-grid class="fullHeight">
+    <ion-row justify-content-center align-items-center class="fullHeight"> 
+        <ion-col size="12" size-sm="9" size-md="6" size-lg="4" size-xl="2">
+            <div class="Profile">
+                <p class="dataShow">
+                  &nbsp;BMI
+                  <br>
+                  <span class="bmi">{{BMI.toFixed(1)}}</span>
+                </p>
+                <ion-item>
+                    <ion-label position="floating">Actual weight</ion-label>
+                    <ion-input [(ngModel)]="weight"></ion-input>
+                  </ion-item>
+                  <br>
+                  <ion-button shape="round" expand="full" (tap)="update();">update</ion-button>
+            </div>
+        </ion-col>
+     </ion-row>
+</ion-grid>
+            
+   
+  
 </ion-content>

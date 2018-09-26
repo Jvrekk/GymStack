@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-toolbar [color]="'primary'">
+    <ion-title>Ustawienia</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+    <ion-grid class="fullHeight">
+        <ion-row justify-content-center align-items-center class="fullHeight"> 
+            <ion-col size="12" size-sm="9" size-md="6" size-lg="4" size-xl="2">
+                <div class="settings">
+                    <ion-item>
+                      <ion-label position="floating">height</ion-label>
+                      <ion-input [(ngModel)]="height"></ion-input>
+                    </ion-item>
+                    <br>
+                    <ion-button shape="round" expand="full" (tap)="save();">Save</ion-button>
+
+                </div>
+            </ion-col>
+         </ion-row>
+    </ion-grid>
+</ion-content>

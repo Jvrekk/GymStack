@@ -1,0 +1,43 @@
+<ion-header>
+  <ion-toolbar [color]="'primary'">
+    <ion-title>{{name}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-grid class="fullHeight">
+    <ion-row justify-content-center align-items-center class="fullHeight"> 
+        <ion-col size="12" size-sm="9" size-md="6" size-lg="4" size-xl="2">
+            <div class="workouts">  
+              <ion-button shape="round" expand="full" *ngFor="let part of bodyParts"
+              href="/tabs/(workout:workout/{{part}})">
+                {{part}}
+              </ion-button>
+              <div *ngIf="bodyParts.length == 0">
+                <p class="dataShow">
+                  Last workout
+                  <br>
+                  <span class="lastNumber">{{objLast}}</span>
+                  <br>
+                  <br>
+                  &nbsp;now
+                  <br>
+                  <span class="actualNumber">{{obj}}</span>
+                </p>
+                <ion-item>
+                  <ion-label position="floating">Sets</ion-label>
+                  <ion-input (ionFocus)="checkFocus()" [(ngModel)]="sets" type="number" min="0"></ion-input>
+                </ion-item>
+                <ion-item>
+                  <ion-label position="floating">weight</ion-label>
+                  <ion-input (ionFocus)="checkFocus()" [(ngModel)]="weight" type="number" min="0"></ion-input>
+                </ion-item>
+                <br>
+                <ion-button shape="round"  (tap)="Add();">Add</ion-button>
+                <ion-button shape="round" color="danger" (tap)="Finish();" >Finish</ion-button>
+              </div>
+            </div>
+        </ion-col>
+     </ion-row>
+  </ion-grid>
+</ion-content>
